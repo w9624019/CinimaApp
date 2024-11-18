@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.gms.google.services)
     alias(libs.plugins.compose.compiler)
+    id("kotlin-kapt")
 }
 
 android {
@@ -60,6 +61,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.firebase.auth)
+    implementation(libs.androidx.paging.common.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -68,4 +70,29 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+
+    //retrofit & rxjava
+    implementation("io.reactivex.rxjava3:rxjava:3.0.13")
+    implementation ("io.reactivex.rxjava3:rxandroid:3.0.0")
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.squareup.retrofit2:adapter-rxjava3:2.9.0")
+    //hilt&dagger
+    implementation("com.google.dagger:hilt-android:2.44")
+
+    //room
+    implementation ("androidx.room:room-rxjava3:2.6.0")
+
+    implementation ("androidx.room:room-runtime:2.6.0")
+    implementation ("androidx.room:room-ktx:2.6.0")
+
+    //glide
+    implementation ("com.github.bumptech.glide:glide:4.15.0")
+    //coil
+    implementation("io.coil-kt:coil-compose:2.4.0")
+
+    implementation ("androidx.compose.runtime:runtime-livedata:1.0.0")
+
+    implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:11.1.0")
 }
+
