@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.gms.google.services)
     alias(libs.plugins.compose.compiler)
+    id("com.google.dagger.hilt.android") // Apply Hilt plugin
     id("kotlin-kapt")
 }
 
@@ -21,23 +22,30 @@ android {
     }
 
     buildTypes {
+        val TMDB_API_KEY = "8bc098faec5fcf7e3076859d91f4a5ab"
         release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
+
             )
+            buildConfigField("String", "TMDB_API_KEY", "\"${TMDB_API_KEY}\"")
+        }
+        debug {
+            buildConfigField("String", "TMDB_API_KEY", "\"${TMDB_API_KEY}\"")
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -50,49 +58,65 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.core.ktx.v1120)
+    implementation(libs.androidx.activity.compose.v180)
+    implementation(platform(libs.androidx.compose.bom.v20230300))
+    implementation(libs.ui)
+    implementation(libs.ui.graphics)
+    implementation(libs.ui.tooling.preview)
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
-    implementation(libs.androidx.navigation.compose)
-    implementation(libs.firebase.auth)
-    implementation(libs.androidx.paging.common.android)
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+    androidTestImplementation(libs.androidx.junit.v115)
+    androidTestImplementation(libs.androidx.espresso.core.v351)
+    androidTestImplementation(platform(libs.androidx.compose.bom.v20241100))
+    androidTestImplementation(libs.ui.test.junit4)
+    debugImplementation(libs.ui.tooling)
+    debugImplementation(libs.ui.test.manifest)
 
+    implementation(libs.material3)
+    implementation(libs.androidx.material.icons.extended)
+    implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.viewmodel)
+    implementation(libs.androidx.lifecycle.runtime)
+    implementation(libs.androidx.lifecycle.livedata)
+    implementation(libs.androidx.lifecycle.common.java8)
+
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics.ktx)
+    implementation(libs.firebase.auth.ktx)
+    implementation (libs.firebase.database)
+
+    //navigation
+    implementation(libs.androidx.navigation.compose.v240)
+
+    //paging
+    implementation(libs.androidx.paging.runtime)
+    implementation(libs.androidx.paging.compose)
 
     //retrofit & rxjava
-    implementation("io.reactivex.rxjava3:rxjava:3.0.13")
-    implementation ("io.reactivex.rxjava3:rxandroid:3.0.0")
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation ("com.squareup.retrofit2:adapter-rxjava3:2.9.0")
-    //hilt&dagger
-    implementation("com.google.dagger:hilt-android:2.44")
+    implementation(libs.rxjava)
+    implementation(libs.rxandroid)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.adapter.rxjava3)
 
     //room
-    implementation ("androidx.room:room-rxjava3:2.6.0")
+    implementation(libs.androidx.room.rxjava3)
 
-    implementation ("androidx.room:room-runtime:2.6.0")
-    implementation ("androidx.room:room-ktx:2.6.0")
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
 
     //glide
-    implementation ("com.github.bumptech.glide:glide:4.15.0")
+    implementation(libs.glide)
     //coil
-    implementation("io.coil-kt:coil-compose:2.4.0")
+    implementation(libs.coil.compose)
 
-    implementation ("androidx.compose.runtime:runtime-livedata:1.0.0")
+    implementation(libs.androidx.runtime.livedata)
 
-    implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:11.1.0")
+    implementation(libs.core)
+    implementation(libs.hilt.android.v2481)
+    kapt(libs.hilt.android.compiler.v248)
 }
 

@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">CinimaApp</string>
+    <string name="create_account">Create an account</string>
+    <string name="welcome">Welcome back</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="hide_password">Hide Password</string>
+    <string name="show_password">Show Password</string>
+    <string name="or">or</string>
+    <string name="trim_continuing">Accept the Terms of conditions by continuing</string>
+    <string name="register">Register</string>
+    <string name="already_login">Already have an account?</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="no_account">No account? Register.</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+
+    <string name="forget_password">Forget your Password</string>
+    <string name="home">Home</string>
 </resources>
