@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">CinimaApp</string>
     <string name="create_account">Create an account</string>
-    <string name="welcome">Welcome back</string>
+    <string name="welcome">Welcome To The New Cinima App</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="email">Email</string>
@@ -12,7 +12,7 @@
     <string name="trim_continuing">Accept the Terms of conditions by continuing</string>
     <string name="register">Register</string>
     <string name="already_login">Already have an account?</string>
-    <string name="welcome_back">Welcome Back</string>
+    <string name="welcome_back">Welcome Back To The New Cinima App</string>
     <string name="no_account">No account? Register.</string>
     <string name="login">Login</string>
     <string name="logout">Logout</string>
