@@ -37,7 +37,7 @@ fun SearchTextField(
             onValueChange = onValueChange,
             colors = TextFieldDefaults.textFieldColors(
                 containerColor = Color.Transparent,
-                placeholderColor = Color(0XFF888D91),
+                //placeholderColor = Color(0XFF888D91),
                 focusedIndicatorColor = Color.Transparent, cursorColor = Color(0XFF070E14)
             ),
             trailingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = "") },
