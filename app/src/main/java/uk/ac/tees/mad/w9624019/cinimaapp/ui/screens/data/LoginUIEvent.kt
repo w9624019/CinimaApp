@@ -1,4 +1,4 @@
-package uk.ac.tees.mad.w9624019.cinimaapp.feature.login.data
+package uk.ac.tees.mad.w9624019.cinimaapp.ui.screens.data
 
 sealed class LoginUIEvent {
 

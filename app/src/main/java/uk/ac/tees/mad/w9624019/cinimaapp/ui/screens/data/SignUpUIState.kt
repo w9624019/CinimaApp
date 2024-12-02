@@ -1,4 +1,4 @@
-package uk.ac.tees.mad.w9624019.cinimaapp.feature.signup.data
+package uk.ac.tees.mad.w9624019.cinimaapp.ui.screens.data
 
 data class SignUpUIState(
     var firstName: String = "",

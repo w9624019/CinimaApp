@@ -5,7 +5,7 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import uk.ac.tees.mad.w9624019.cinimaapp.data.models.Movie
 import uk.ac.tees.mad.w9624019.cinimaapp.data.network.TmdbService
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.QueryType
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.QueryType
 
 class MoviePagingSource(
     private val tmdbService: TmdbService,

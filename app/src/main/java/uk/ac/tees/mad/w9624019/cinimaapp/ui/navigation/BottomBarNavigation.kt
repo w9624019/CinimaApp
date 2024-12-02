@@ -9,7 +9,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import com.google.firebase.auth.FirebaseAuth
-import uk.ac.tees.mad.w9624019.cinimaapp.feature.login.LoginScreen
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.screens.LoginScreen
 import uk.ac.tees.mad.w9624019.cinimaapp.ui.screens.DetailMovieScreen
 import uk.ac.tees.mad.w9624019.cinimaapp.ui.screens.FavoriteMovieScreen
 import uk.ac.tees.mad.w9624019.cinimaapp.ui.screens.HomeScreen
