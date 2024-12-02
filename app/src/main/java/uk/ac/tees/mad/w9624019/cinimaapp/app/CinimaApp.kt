@@ -9,14 +9,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.viewmodel.compose.viewModel
 import uk.ac.tees.mad.w9624019.cinimaapp.feature.home.HomeScreen
 import uk.ac.tees.mad.w9624019.cinimaapp.feature.home.data.HomeViewModel
-import uk.ac.tees.mad.w9624019.cinimaapp.feature.login.LoginScreen
-import uk.ac.tees.mad.w9624019.cinimaapp.feature.signup.SignUpScreen
-import uk.ac.tees.mad.w9624019.cinimaapp.feature.termsconditions.TermsAndConditionsScreen
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.navigation.MoviesAppRouter
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.navigation.Screen
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.screens.LoginScreen
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.screens.SignUpScreen
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.screens.TermsAndConditionsScreen
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.navigation.CinimaAppRouter
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.navigation.Screen
 
 @Composable
-fun MoviesApp(homeViewModel: HomeViewModel = viewModel()) {
+fun CinimaApp(homeViewModel: HomeViewModel = viewModel()) {
 
     homeViewModel.checkForActiveSession()
     Surface(
@@ -25,10 +25,10 @@ fun MoviesApp(homeViewModel: HomeViewModel = viewModel()) {
     ) {
 
         if (homeViewModel.isUserLoggedIn.value == true) {
-            MoviesAppRouter.navigateTo(Screen.HomeScreen)
+            CinimaAppRouter.navigateTo(Screen.HomeScreen)
         }
 
-        Crossfade(targetState = MoviesAppRouter.currentScreen, label = "") { currentState->
+        Crossfade(targetState = CinimaAppRouter.currentScreen, label = "") { currentState->
             when(currentState.value){
                 is Screen.LoginScreen->{
                     LoginScreen()
@@ -48,3 +48,4 @@ fun MoviesApp(homeViewModel: HomeViewModel = viewModel()) {
     }
 
 }
+

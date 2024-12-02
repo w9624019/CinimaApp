@@ -1,4 +1,4 @@
-package uk.ac.tees.mad.w9624019.cinimaapp.di
+package uk.ac.tees.mad.w9624019.cinimaapp.app
 
 import android.content.Context
 import androidx.room.Room

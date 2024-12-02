@@ -1,4 +1,4 @@
-package uk.ac.tees.mad.w9624019.cinimaapp.utils.navigation
+package uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.navigation
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
@@ -13,7 +13,7 @@ sealed class Screen(){
 
 }
 
-object MoviesAppRouter{
+object CinimaAppRouter{
 
     var currentScreen: MutableState<Screen> = mutableStateOf(Screen.LoginScreen)
     fun navigateTo(destination : Screen){
@@ -23,6 +23,11 @@ object MoviesAppRouter{
         if(destination.equals(Screen.HomeScreen)){
             if(FirebaseAuth.getInstance().currentUser==null){
                 currentScreen.value = Screen.LoginScreen
+            }
+        }
+        if(destination.equals(Screen.TermsAndConditionsScreen)){
+            if(FirebaseAuth.getInstance().currentUser==null){
+                currentScreen.value = Screen.TermsAndConditionsScreen
             }
         }
         currentScreen.value = destination

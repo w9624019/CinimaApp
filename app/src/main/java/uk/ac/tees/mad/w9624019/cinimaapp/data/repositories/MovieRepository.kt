@@ -10,7 +10,7 @@ import uk.ac.tees.mad.w9624019.cinimaapp.data.network.TmdbDao
 import uk.ac.tees.mad.w9624019.cinimaapp.data.network.TmdbService
 import uk.ac.tees.mad.w9624019.cinimaapp.data.paging.FavMoviePagingSource
 import uk.ac.tees.mad.w9624019.cinimaapp.data.paging.MoviePagingSource
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.QueryType
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.QueryType
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -25,21 +25,24 @@ class MovieRepository @Inject constructor(private val tmdbService: TmdbService, 
     fun getPopularMovies(): Flow<PagingData<Movie>> {
         return Pager(
             config = PagingConfig(pageSize = 10),
-            pagingSourceFactory = { MoviePagingSource(tmdbService, BuildConfig.TMDB_API_KEY,QueryType.POPULAR,"") }
+            pagingSourceFactory = { MoviePagingSource(tmdbService, BuildConfig.TMDB_API_KEY,
+                QueryType.POPULAR,"") }
         ).flow
     }
 
     fun getUpcomingMovies(): Flow<PagingData<Movie>> {
         return Pager(
             config = PagingConfig(pageSize = 10),
-            pagingSourceFactory = { MoviePagingSource(tmdbService, BuildConfig.TMDB_API_KEY,QueryType.UPCOMING,"") }
+            pagingSourceFactory = { MoviePagingSource(tmdbService, BuildConfig.TMDB_API_KEY,
+                QueryType.UPCOMING,"") }
         ).flow
     }
 
     fun getNowPlayingMovies(): Flow<PagingData<Movie>> {
         return Pager(
             config = PagingConfig(pageSize = 10),
-            pagingSourceFactory = { MoviePagingSource(tmdbService, BuildConfig.TMDB_API_KEY,QueryType.NOWPLAYING,"") }
+            pagingSourceFactory = { MoviePagingSource(tmdbService, BuildConfig.TMDB_API_KEY,
+                QueryType.NOWPLAYING,"") }
         ).flow
     }
 
@@ -53,7 +56,8 @@ class MovieRepository @Inject constructor(private val tmdbService: TmdbService, 
     fun searchMovie(query: String) : Flow<PagingData<Movie>>{
         return Pager(
             config = PagingConfig(pageSize = 10),
-            pagingSourceFactory = { MoviePagingSource(tmdbService, BuildConfig.TMDB_API_KEY,QueryType.SEARCH,query) }
+            pagingSourceFactory = { MoviePagingSource(tmdbService, BuildConfig.TMDB_API_KEY,
+                QueryType.SEARCH,query) }
         ).flow
     }
 

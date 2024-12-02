@@ -1,4 +1,4 @@
-package uk.ac.tees.mad.w9624019.cinimaapp.utils.navigation
+package uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.navigation
 
 import androidx.activity.ComponentActivity
 import androidx.activity.OnBackPressedCallback

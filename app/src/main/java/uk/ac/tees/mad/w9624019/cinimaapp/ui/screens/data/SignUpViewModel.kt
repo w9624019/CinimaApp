@@ -1,12 +1,11 @@
-package uk.ac.tees.mad.w9624019.cinimaapp.feature.signup.data
+package uk.ac.tees.mad.w9624019.cinimaapp.ui.screens.data
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
-import uk.ac.tees.mad.w9624019.cinimaapp.feature.signup.data.SignUpUIEvent
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.Validator
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.navigation.MoviesAppRouter
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.navigation.Screen
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.Validator
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.navigation.CinimaAppRouter
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.navigation.Screen
 
 class SignUpViewModel : ViewModel() {
 
@@ -180,7 +179,7 @@ class SignUpViewModel : ViewModel() {
             .addOnCompleteListener {
                 registerInProgress.value = false
                 if (it.isSuccessful) {
-                    MoviesAppRouter.navigateTo(Screen.HomeScreen)
+                    CinimaAppRouter.navigateTo(Screen.HomeScreen)
                 }
             }
             .addOnFailureListener {

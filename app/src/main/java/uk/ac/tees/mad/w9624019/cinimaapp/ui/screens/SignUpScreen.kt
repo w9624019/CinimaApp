@@ -1,4 +1,4 @@
-package uk.ac.tees.mad.w9624019.cinimaapp.feature.signup
+package uk.ac.tees.mad.w9624019.cinimaapp.ui.screens
 
 import android.widget.Toast
 import androidx.compose.foundation.background
@@ -22,8 +22,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import uk.ac.tees.mad.w9624019.cinimaapp.R
-import uk.ac.tees.mad.w9624019.cinimaapp.feature.signup.data.SignUpUIEvent
-import uk.ac.tees.mad.w9624019.cinimaapp.feature.signup.data.SignUpViewModel
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.screens.data.SignUpUIEvent
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.screens.data.SignUpViewModel
 import uk.ac.tees.mad.w9624019.cinimaapp.theme.componensts.ButtonComponent
 import uk.ac.tees.mad.w9624019.cinimaapp.theme.componensts.CheckBoxComponent
 import uk.ac.tees.mad.w9624019.cinimaapp.theme.componensts.ClickableLoginTextComponent
@@ -32,9 +32,9 @@ import uk.ac.tees.mad.w9624019.cinimaapp.theme.componensts.HeadingTextComponent
 import uk.ac.tees.mad.w9624019.cinimaapp.theme.componensts.NormalTextComponent
 import uk.ac.tees.mad.w9624019.cinimaapp.theme.componensts.PasswordTextFieldComponent
 import uk.ac.tees.mad.w9624019.cinimaapp.theme.componensts.TextFieldComponent
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.navigation.MoviesAppRouter
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.navigation.Screen
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.navigation.SystemBackButtonHandler
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.navigation.CinimaAppRouter
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.navigation.Screen
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.navigation.SystemBackButtonHandler
 
 @Composable
 fun SignUpScreen(signUpViewModel: SignUpViewModel = viewModel()) {
@@ -42,7 +42,7 @@ fun SignUpScreen(signUpViewModel: SignUpViewModel = viewModel()) {
 
 
     SystemBackButtonHandler {
-        MoviesAppRouter.navigateTo(Screen.LoginScreen)
+        CinimaAppRouter.navigateTo(Screen.LoginScreen)
     }
 
     Box(
@@ -112,7 +112,7 @@ fun SignUpScreen(signUpViewModel: SignUpViewModel = viewModel()) {
 
                 CheckBoxComponent(value = stringResource(id = R.string.trim_continuing),
                     onTextSelected = {
-                        MoviesAppRouter.navigateTo(Screen.TermsAndConditionsScreen)
+                        CinimaAppRouter.navigateTo(Screen.TermsAndConditionsScreen)
                     }, onCheckedChange = {
                         signUpViewModel.onEvent(SignUpUIEvent.PrivacyPolicyCheckBoxClicked(it))
                     }, errorMsg = signUpViewModel.signUpUIState.value.privacyPolicyAcceptedMsgError
@@ -140,7 +140,7 @@ fun SignUpScreen(signUpViewModel: SignUpViewModel = viewModel()) {
                 ClickableLoginTextComponent(
                     value = stringResource(id = R.string.already_login),
                     onTextSelected = {
-                        MoviesAppRouter.navigateTo(Screen.LoginScreen)
+                        CinimaAppRouter.navigateTo(Screen.LoginScreen)
                     })
             }
         }

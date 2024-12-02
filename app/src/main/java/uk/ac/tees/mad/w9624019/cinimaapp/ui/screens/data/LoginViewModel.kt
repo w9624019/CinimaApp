@@ -1,13 +1,13 @@
-package uk.ac.tees.mad.w9624019.cinimaapp.feature.login.data
+package uk.ac.tees.mad.w9624019.cinimaapp.ui.screens.data
 
 import android.content.Context
 import android.widget.Toast
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.Validator
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.navigation.MoviesAppRouter
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.navigation.Screen
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.Validator
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.navigation.CinimaAppRouter
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.navigation.Screen
 
 class LoginViewModel : ViewModel() {
 
@@ -104,7 +104,7 @@ class LoginViewModel : ViewModel() {
 
                 if (it.isSuccessful) {
                     loginInProgress.value = false
-                    MoviesAppRouter.navigateTo(Screen.HomeScreen)
+                    CinimaAppRouter.navigateTo(Screen.HomeScreen)
                 } else {
                     loginInProgress.value = false
                 }
