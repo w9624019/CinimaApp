@@ -33,9 +33,7 @@ fun BottomBarNavigation(
             composable(BottomBarRoutes.HOME.routes) {
                 HomeScreen(navController = navHostController, viewModel = movieViewModel)
             }
-            composable(BottomBarRoutes.FAVORITE.routes) {
-                FavoriteMovieScreen(navController = navHostController, viewModel = movieViewModel)
-            }
+
             composable(BottomBarRoutes.LOGOUT.routes) {
                 FirebaseAuth.getInstance().signOut()
                 LoginScreen()
