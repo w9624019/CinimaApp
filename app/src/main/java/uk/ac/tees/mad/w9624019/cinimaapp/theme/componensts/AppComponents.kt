@@ -68,7 +68,7 @@ fun NormalTextComponent(value: String) {
             fontWeight = FontWeight.Normal,
             fontStyle = FontStyle.Normal
         ),
-        color = colorResource(id = R.color.teal_200),
+        color = colorResource(id = R.color.custom),
         textAlign = TextAlign.Center
     )
 }
@@ -85,7 +85,7 @@ fun HeadingTextComponent(value: String) {
             fontWeight = FontWeight.Bold,
             fontStyle = FontStyle.Normal
         ),
-        color = colorResource(id = R.color.teal_200),
+        color = colorResource(id = R.color.custom),
         textAlign = TextAlign.Center
     )
 }

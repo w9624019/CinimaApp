@@ -1,4 +1,4 @@
-package uk.ac.tees.mad.w9624019.cinimaapp.feature.termsconditions
+package uk.ac.tees.mad.w9624019.cinimaapp.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Spacer
@@ -16,9 +16,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import uk.ac.tees.mad.w9624019.cinimaapp.theme.componensts.HeadingTextComponent
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.navigation.MoviesAppRouter
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.navigation.Screen
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.navigation.SystemBackButtonHandler
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.navigation.CinimaAppRouter
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.navigation.Screen
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.navigation.SystemBackButtonHandler
 
 @Composable
 fun TermsAndConditionsScreen() {
@@ -75,7 +75,7 @@ fun TermsAndConditionsScreen() {
 
     }
     SystemBackButtonHandler {
-        MoviesAppRouter.navigateTo(Screen.SignUpScreen)
+        CinimaAppRouter.navigateTo(Screen.SignUpScreen)
     }
 }
 

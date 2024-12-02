@@ -7,8 +7,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.navigation.MoviesAppRouter
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.navigation.Screen
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.navigation.CinimaAppRouter
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.navigation.Screen
 
 
 class HomeViewModel() : ViewModel() {
@@ -24,7 +24,7 @@ class HomeViewModel() : ViewModel() {
         firebaseAuth.signOut()
         val authStateListener = FirebaseAuth.AuthStateListener {
             if (it.currentUser == null) {
-                MoviesAppRouter.navigateTo(Screen.LoginScreen)
+                CinimaAppRouter.navigateTo(Screen.LoginScreen)
             } else {
                 errorMsg = "Inside sign out is not complete"
             }

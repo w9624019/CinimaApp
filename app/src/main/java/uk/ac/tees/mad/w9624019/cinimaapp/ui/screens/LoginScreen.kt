@@ -1,4 +1,4 @@
-package uk.ac.tees.mad.w9624019.cinimaapp.feature.login
+package uk.ac.tees.mad.w9624019.cinimaapp.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -28,11 +27,10 @@ import uk.ac.tees.mad.w9624019.cinimaapp.theme.componensts.HeadingTextComponent
 import uk.ac.tees.mad.w9624019.cinimaapp.theme.componensts.NormalTextComponent
 import uk.ac.tees.mad.w9624019.cinimaapp.theme.componensts.PasswordTextFieldComponent
 import uk.ac.tees.mad.w9624019.cinimaapp.theme.componensts.TextFieldComponent
-import uk.ac.tees.mad.w9624019.cinimaapp.theme.componensts.UnderLineNormalTextComponent
-import uk.ac.tees.mad.w9624019.cinimaapp.feature.login.data.LoginUIEvent
-import uk.ac.tees.mad.w9624019.cinimaapp.feature.login.data.LoginViewModel
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.navigation.MoviesAppRouter
-import uk.ac.tees.mad.w9624019.cinimaapp.utils.navigation.Screen
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.screens.data.LoginUIEvent
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.screens.data.LoginViewModel
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.navigation.CinimaAppRouter
+import uk.ac.tees.mad.w9624019.cinimaapp.ui.utils.navigation.Screen
 
 @Composable
 fun LoginScreen(loginViewModel: LoginViewModel = viewModel()) {
@@ -80,13 +78,6 @@ fun LoginScreen(loginViewModel: LoginViewModel = viewModel()) {
 
                 )
 
-                Spacer(modifier = Modifier.height(10.dp))
-
-                UnderLineNormalTextComponent(
-                    value = stringResource(id = R.string.forget_password),
-                    onTextSelected = {
-                    })
-
                 Spacer(modifier = Modifier.height(200.dp))
 
                 ButtonComponent(
@@ -104,7 +95,7 @@ fun LoginScreen(loginViewModel: LoginViewModel = viewModel()) {
                 ClickableRegisterTextComponent(
                     value = stringResource(id = R.string.no_account),
                     onTextSelected = {
-                        MoviesAppRouter.navigateTo(Screen.SignUpScreen)
+                        CinimaAppRouter.navigateTo(Screen.SignUpScreen)
                     })
             }
         }
