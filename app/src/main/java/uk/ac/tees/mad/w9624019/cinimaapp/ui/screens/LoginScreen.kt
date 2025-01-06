@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -51,6 +52,7 @@ fun LoginScreen(loginViewModel: LoginViewModel = viewModel()) {
                     .fillMaxSize()
                     .background(Color.White)
             ) {
+                Spacer(modifier = Modifier.height(20.dp))
                 NormalTextComponent(value = stringResource(id = R.string.app_name))
                 HeadingTextComponent(value = stringResource(id = R.string.welcome_back))
                 Spacer(modifier = Modifier.height(20.dp))
@@ -101,7 +103,7 @@ fun LoginScreen(loginViewModel: LoginViewModel = viewModel()) {
         }
 
         if (loginViewModel.loginInProgress.value) {
-           // CircularProgressIndicator()
+            CircularProgressIndicator()
         }
     }
 

@@ -20,6 +20,7 @@ fun HomeScreen(navController: NavController, viewModel: MovieViewModel) {
     var searchQuery by remember { mutableStateOf("") }
     val upcomingMovies = viewModel.upcomingMovies.collectAsLazyPagingItems()
     val nowPlayingMovies = viewModel.nowPlayingMovies.collectAsLazyPagingItems()
+    val popularMovies = viewModel.popularMovies.collectAsLazyPagingItems()
     val searchedMovies = viewModel.searchedMovies.collectAsLazyPagingItems()
 
     LazyColumn(modifier = Modifier.padding(horizontal = 16.dp)) {
@@ -43,5 +44,16 @@ fun HomeScreen(navController: NavController, viewModel: MovieViewModel) {
             item {
                 MovieCarousel(navController = navController, movies = upcomingMovies, viewModel)
             }
+        item {
+            Text(
+                text = "Popular Movies",
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 8.dp),
+                style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp)
+            )
+        }
+        item {
+            MovieCarousel(navController = navController, movies = popularMovies, viewModel)
+        }
+
     }
 }

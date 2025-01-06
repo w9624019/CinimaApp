@@ -38,6 +38,7 @@ fun HomeScreen(movieViewModel: MovieViewModel = viewModel()) {
         ) {
             val tabList = listOf(
                 BottomBarRoutes.HOME,
+                BottomBarRoutes.FAVORITE,
                 BottomBarRoutes.LOGOUT
             )
 
